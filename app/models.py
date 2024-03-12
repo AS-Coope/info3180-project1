@@ -11,3 +11,16 @@ class Property():
     type = db.Column(db.String(50))
     description = db.Column(db.String(200))
     filename = db.Column(db.String(200))
+
+    def __init__(self, title, num_of_bedrooms, num_of_bathrooms, location, price, type, description, filename):
+        self.title = title
+        self.num_of_bedrooms = num_of_bedrooms
+        self.num_of_bathrooms = num_of_bathrooms
+        self.location = location
+        self.price = price
+        self.type = type
+        self.description = description
+        self.filename = filename
+
+    def __repr__(self):
+        return '<Property %r>' % self.title
