@@ -8,6 +8,7 @@ This file contains the routes for your application.
 from app import app
 from flask import render_template, flash, request, redirect, url_for
 from app.forms import PropertyForm
+from werkzeug.utils import secure_filename
 from app.models import Property
 
 
@@ -39,6 +40,8 @@ def create_property():
         price = property.price.data
         type = property.type.data
         desc = property.description.data
+        prop_photo = property.property_photo.data
+        filename = secure_filename(prop_photo.filname)
 
         flash('Property was successfully added!')
         render_template(redirect(url_for('properties'))) 
