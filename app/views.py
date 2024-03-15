@@ -26,7 +26,7 @@ def about():
 
 @app.route('/properties/create')
 def create_property():
-    pass
+    return render_template('create_property.html')
 
 @app.route('/properties')
 def properties():
