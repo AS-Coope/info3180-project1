@@ -43,7 +43,7 @@ def create_property():
         prop_desc = property.description.data
         prop_photo = property.property_photo.data
         prop_filename = secure_filename(prop_photo.filename)
-
+    
         prop_photo.save(os.path.join(
             app.config['UPLOAD_FOLDER'], prop_filename
         ))
@@ -55,7 +55,7 @@ def create_property():
         db.session.commit()
 
         flash('Property was successfully added!')
-        return render_template(redirect(url_for('properties'))) 
+        return redirect(url_for('create_property'))
     return render_template('create_property.html', form=property)
 
 @app.route('/properties')
