@@ -10,7 +10,7 @@ class PropertyForm(FlaskForm):
     location = StringField('Location', validators=[InputRequired()])
     price = StringField('Price of property',validators=[InputRequired()])
     type = SelectField('Type of property', choices=[('Apartment'), ('House')], validate_choice=True)
-    description = TextAreaField('Describe the property (200 characters max)', validators.length(max=200))
+    description = TextAreaField('Describe the property (200 characters max)')
     property_photo = FileField(
         'Property Photo', validators=[
             FileRequired(),
