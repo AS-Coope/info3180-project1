@@ -37,17 +37,19 @@ def create_property():
         prop_title = property.title.data
         prop_numOfBed = property.numOfBedrooms.data
         prop_numOfBath = property.numOfBathrooms.data
-        location = property.location.data
-        price = property.price.data
-        type = property.type.data
-        desc = property.description.data
+        prop_location = property.location.data
+        prop_price = property.price.data
+        prop_type = property.type.data
+        prop_desc = property.description.data
         prop_photo = property.property_photo.data
-        filename = secure_filename(prop_photo.filname)
+        prop_filename = secure_filename(prop_photo.filname)
 
         prop_photo.save(os.path.join(
-            app.config['UPLOAD_FOLDER'], filename
+            app.config['UPLOAD_FOLDER'], prop_filename
         ))
         
+        prop = Property(prop_title, prop_numOfBed, prop_numOfBath, 
+                        prop_location, prop_price, prop_type, prop_desc, prop_filename)
         flash('Property was successfully added!')
         render_template(redirect(url_for('properties'))) 
     return render_template('create_property.html')
