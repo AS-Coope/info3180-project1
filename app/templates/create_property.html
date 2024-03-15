@@ -5,7 +5,7 @@
 <form action="{{ url_for('properties') }}" method="post" enctype="multipart/form-data">
 
     <h2>Property Form</h2>
-    {#% include 'flash_messages.html' %#}
+    {% include 'flash_messages.html' %}
     {{ form.csrf_token }}
     <div class="form-group mb-3">
         {{ form.title.label(class="form-label") }}
