@@ -6,7 +6,7 @@ This file contains the routes for your application.
 """
 
 import os
-from app import app
+from app import app, db
 from flask import render_template, flash, request, redirect, url_for
 from app.forms import PropertyForm
 from werkzeug.utils import secure_filename
@@ -50,13 +50,17 @@ def create_property():
         
         prop = Property(prop_title, prop_numOfBed, prop_numOfBath, 
                         prop_location, prop_price, prop_type, prop_desc, prop_filename)
+        
+        db.session.add(prop)
+        db.session.commit()
+
         flash('Property was successfully added!')
         render_template(redirect(url_for('properties'))) 
     return render_template('create_property.html')
 
 @app.route('/properties')
 def properties():
-    pass
+    return 'Properties'
 
 @app.route('/properties/<propertyid>')
 def property():
