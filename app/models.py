@@ -1,8 +1,9 @@
 from . import db
 
-class Property():
+class Property(db.Model):
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    __tablename__ = 'property'
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     num_of_bedrooms = db.Column(db.Integer)
     num_of_bathrooms = db.Column(db.Integer)
