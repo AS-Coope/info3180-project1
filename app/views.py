@@ -42,8 +42,8 @@ def create_property():
         prop_type = property.type.data
         prop_desc = property.description.data
         prop_photo = property.property_photo.data
-        prop_filename = secure_filename(prop_photo.filname)
-
+        prop_filename = secure_filename(prop_photo.filename)
+    
         prop_photo.save(os.path.join(
             app.config['UPLOAD_FOLDER'], prop_filename
         ))
