@@ -5,6 +5,7 @@ Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file contains the routes for your application.
 """
 
+import os
 from app import app
 from flask import render_template, flash, request, redirect, url_for
 from app.forms import PropertyForm
@@ -43,6 +44,10 @@ def create_property():
         prop_photo = property.property_photo.data
         filename = secure_filename(prop_photo.filname)
 
+        prop_photo.save(os.path.join(
+            app.config['UPLOAD_FOLDER'], filename
+        ))
+        
         flash('Property was successfully added!')
         render_template(redirect(url_for('properties'))) 
     return render_template('create_property.html')
