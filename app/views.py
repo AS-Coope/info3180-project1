@@ -66,8 +66,9 @@ def properties():
     return render_template('properties.html', props=all_properties)
 
 @app.route('/properties/<propertyid>')
-def property():
-    pass
+def property(propertyid):
+    indiv_prop = db.session.execute(db.select(Property).filter_by(id=propertyid)).scalar()
+    return render_template('property.html', property=indiv_prop)
 
 @app.route('/upload/<filename>')
 def get_image(filename):
