@@ -9,7 +9,7 @@
             <h5 class="card-title">{{prop.title}}</h5>
             <p class="card-text">{{prop.location}}</p>
             <p class="property-price">${{prop.price}}</p>
-            <a href="{{url_for('propertye', property_id=prop.id)}}" class="btn btn-primary">View Property</a>
+            <a href="{{url_for('property', propertyid=prop.id)}}" class="btn btn-primary">View Property</a>
         </div>
     </div>
     {% endfor %}
