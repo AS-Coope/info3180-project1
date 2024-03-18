@@ -1,5 +1,7 @@
 body {
     padding-top: 5rem;
+    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    font-weight: normal;
 }
 
 .grid {
@@ -19,12 +21,22 @@ body {
     margin-top: 0;
 }
 
+.location-indiv {
+    margin-bottom: 1rem;
+}
+
 .card-title-properties {
     margin-bottom: 0.2rem;
 }
 
-.property-price {
-    background-color: lightskyblue;
+
+.price-build-type {
+    display: flex;
+    gap: 1rem;
+}
+
+.property-price,
+.property-type {
     width: 7rem;
     margin-top: 1rem;
     padding: 0.5rem;
@@ -32,6 +44,37 @@ body {
     text-align: center;
 }
 
+.property-price {
+    background-color: lightskyblue;
+}
+
+.property-type {
+    background-color: yellow;
+}
+
 .card-btn {
     width: 18rem;
+}
+
+.card-property {
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-property img {
+    width: 20rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.house-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.property {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,19 +1,42 @@
 {% extends 'base.html'%}
 
 {% block main %}
-<div class="card card-img-left">
-    <img class="card-img-top" src="{{ url_for('get_image', filename=property.filename)}}" alt="{{property.filename}}">
-    <div class="card-body">
-        <h5 class="card-title">{{property.title}}</h5>
-        <div class="location-indiv">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-            </svg>
-            <p class="card-text">{{property.location}}</p>
+<div class="property">
+    <div class="card card-img-left card-property">
+        <img class="card-img-top" src="{{ url_for('get_image', filename=property.filename)}}"
+            alt="{{property.filename}}">
+        <div class="card-body">
+            <h5 class="card-title">{{property.title}}</h5>
+            <div class="price-build-type">
+                <p class="property-price">${{property.price}}</p>
+                <p class="property-type">${{property.type}}</p>
+            </div>
+            <p>{{property.description}}</p>
+            <div class="house-info">
+                <div class="location-indiv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg>
+                    <p class="card-text">{{property.num_of_bedrooms}} Bedrooms</p>
+                </div>
+                <div class="location-indiv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg>
+                    <p class="card-text">{{property.num_of_bathrooms}} Bathrooms</p>
+                </div>
+            </div>
+            <div class="location-indiv">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                </svg>
+                <p class="card-text">{{property.location}}</p>
+            </div>
+            <a href="" class="btn btn-primary">Email Realtor</a>
         </div>
-        <p class="property-price">${{property.price}}</p>
-        <a href="" class="btn btn-primary">Email Realtor</a>
     </div>
 </div>
 {% endblock %}
