@@ -7,3 +7,12 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
 }
+
+.location {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-btn {
+    width: rem;
+}
