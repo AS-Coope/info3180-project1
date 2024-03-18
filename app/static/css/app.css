@@ -18,6 +18,15 @@ body {
     color: grey;
 }
 
+.property-price {
+    background-color: lightskyblue;
+    width: 7rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
 .card-btn {
     width: 18rem;
 }
