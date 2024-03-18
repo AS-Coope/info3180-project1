@@ -4,6 +4,10 @@ body {
     font-weight: normal;
 }
 
+h5 {
+    font-weight: bold;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -39,7 +43,7 @@ body {
 .property-type {
     width: 7rem;
     margin-top: 1rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     border-radius: 2rem;
     text-align: center;
 }
