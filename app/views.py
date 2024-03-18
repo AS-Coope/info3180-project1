@@ -55,7 +55,7 @@ def create_property():
         db.session.commit()
 
         flash('Property was successfully added!')
-        return redirect(url_for('create_property'))
+        return redirect(url_for('properties'))
     return render_template('create_property.html', form=property)
 
 @app.route('/properties')
