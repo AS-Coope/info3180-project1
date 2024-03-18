@@ -60,13 +60,23 @@ def create_property():
 
 @app.route('/properties')
 def properties():
+    # get all the entries in the property database and store them in a list
+    # for each property, grab the name of the file then concatenate it with the uploads folder name to get file path
     return 'Properties'
 
 @app.route('/properties/<propertyid>')
 def property():
     pass
 
+def get_uploaded_images():
+    rootdir = os.getcwd()
+    filenames = []
+    #print(rootdir)
+    for subdir, dirs, files in os.walk(rootdir + app.config['UPLOAD_FOLDER']):
+        for file in files:
+            filenames.append(file)
 
+    return filenames
 ###
 # The functions below should be applicable to all Flask apps.
 ###
